@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        String B=sc.next();
+        int str1=A.length();
+        int str2=B.length();
+        int length=str1+str2;
+        String s1 = A.substring(0, 1).toUpperCase();
+        String nameCapitalized1 = s1 + A.substring(1);
+        String s2 = B.substring(0, 1).toUpperCase();
+        String nameCapitalized2 = s2 + B.substring(1);
+        System.out.println(length);
+        if(A.compareTo(B)>0){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");
+        }
+        System.out.println(nameCapitalized1+" "+nameCapitalized2);
+    }
+}
+
+
+
