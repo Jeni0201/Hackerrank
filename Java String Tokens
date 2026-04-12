@@ -1,0 +1,38 @@
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        // Handle empty input immediately
+        if (!scan.hasNext()) {
+            System.out.println(0);
+            return;
+        }
+
+        String s = scan.nextLine();
+        
+        // 1. Remove leading/trailing non-alphabetic characters
+        s = s.trim();
+        
+        // 2. If the string is empty after trimming, the token count is 0
+        if (s.length() == 0) {
+            System.out.println(0);
+            return;
+        }
+
+        // 3. Split by one or MORE (+) non-alphabetic characters
+        // [^A-Za-z]+ means: "Split whenever you find characters NOT in the alphabet"
+        String[] tokens = s.split("[^A-Za-z]+");
+
+        // 4. Output the total count and each token
+        System.out.println(tokens.length);
+        for (String token : tokens) {
+            System.out.println(token);
+        }
+        
+        scan.close();
+    }
+}
